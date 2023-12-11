@@ -49,7 +49,7 @@ class GeneralWrapperPage extends StatefulWidget {
 class _GeneralWrapperPageState extends State<GeneralWrapperPage> {
   int _selectedValue = 0;
 
-  final PageController _pageController = PageController(initialPage: 0);
+  late PageController _pageController;
 
   final List<Widget> _listOfWidget = <Widget>[
     const HomePage(),
@@ -59,6 +59,7 @@ class _GeneralWrapperPageState extends State<GeneralWrapperPage> {
 
   _GeneralWrapperPageState(int inputIndex) {
     _selectedValue = inputIndex;
+    _pageController = PageController(initialPage: inputIndex);
   }
 
   void onButtonPressed(int index) {

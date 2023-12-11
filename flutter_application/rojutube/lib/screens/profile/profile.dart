@@ -1,7 +1,9 @@
 import 'package:RoJuTube/generated/l10n.dart';
+import 'package:RoJuTube/ui_utils/route.dart';
 import 'package:RoJuTube/ui_utils/ui_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -57,12 +59,24 @@ class ProfilePage extends StatelessWidget {
                   flex: 1,
                   child: Container(
                     alignment: Alignment.centerRight,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.edit_note),
+                    child: Row(
+                      children: [
+                        IconButton(
+                          onPressed: () {
+                            context.push(AppRoute.GenerateAvatarRoute);
+                          },
+                          icon: const Icon(Icons.person_add_alt),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            context.push(AppRoute.GenerateAnimationsRoute);
+                          },
+                          icon: const Icon(Icons.edit_note),
+                        ),
+                      ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
             const SizedBox(
